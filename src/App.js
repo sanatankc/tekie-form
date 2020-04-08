@@ -65,12 +65,23 @@ function App() {
               let day = String(dateObj.getDate()).padStart(2, '0');
               let year = dateObj.getFullYear();
               let date = day + ', ' + month  + ' ' + year;
-              let time = `${String(dateObj.getHours()).padStart(2, '0')}::${String(dateObj.getMinutes()).padStart(2, '0')}::${String(dateObj.getSeconds()).padStart(2, '0')}`
-
+              let hours = dateObj.getHours()
+              let clock = ''
+              if (hours >= 12) {
+                if (hours !== 12) {
+                  hours = hours - 12
+                } 
+                clock = 'pm'
+              } else {
+                clock = 'am'
+              }
+              hours = String(hours).padStart(2, '0')
+              let minute = String(dateObj.getMinutes()).padStart(2, '0')
+              let time = `${hours}:${minute} ${clock}`
 
               if (name && phone) {
                 setIsLoading(true)
-                await fetch(`${uri}?name=${name}&phone_number=${phone}&time=${date + ', ' + time}`)
+                await fetch(`${uri}?name=${name}&phone_number=${phone}&time=${date + ' ' + time}`)
                 setIsLoading(false)
                 setShowModal(true)
                 setName('')
