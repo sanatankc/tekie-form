@@ -51,10 +51,10 @@ function App() {
         <form>
           <input onChange={(e) => {
             setName(e.target.value)
-          }} name="name" type="text" placeholder="Enter your name" className="name-input"></input>
+          }} name="name" type="text" placeholder="Enter your name" className="name-input" value={name}></input>
           <input onChange={(e) => {
             setPhone(e.target.value)
-          }} name="phone_number" type="tel" placeholder="Phone number"></input>
+          }} name="phone_number" type="tel" placeholder="Phone number" value={phone}></input>
           <div className={isLoading ? "button isLoading" : "button"} onClick={async () => {
             if (!isLoading) {
               if (name && phone) {
@@ -62,6 +62,8 @@ function App() {
                 await fetch(`${uri}?name=${name}&phone_number=${phone}`)
                 setIsLoading(false)
               setShowModal(true)
+              setName('')
+              setPhone('')
               }
             }
           }}>
