@@ -7,7 +7,7 @@ import info from './info.png'
 import './App.css';
 
 
-const uri = 'https://script.google.com/macros/s/AKfycbzrggHwK0IfS6SvJodQcXl2jkkqOvLEnmnfzzY3NOeSqi5OKM_W/exec'
+const uri = 'https://script.google.com/macros/s/AKfycbyvC6_554Eh5Bs709VCOipMUnhIUZ5bd0sfMVRCBg/exec'
 function App() {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
@@ -28,9 +28,10 @@ function App() {
           We present to you the <span className="underline">world's first educational series</span> to learn the basics of programming. Watch the teaser below.
         </div>
         <div class="videoWrapper">
-          <iframe allowfullscreen="true" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="788.54" height="443" type="text/html" src="https://www.youtube.com/embed/Eni0tJ1AAe8?autoplay=1&fs=1&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0"></iframe>
+          <iframe allowfullscreen="true" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="788.54" height="443" type="text/html" src="https://www.youtube.com/embed/Eni0tJ1AAe8?autoplay=1&fs=1&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0"></iframe>
         </div>
         </div>
+        <div></div>
         <img src={flex} className="flex" />
         <div className="container">
         <div className="subTitle">
@@ -57,13 +58,23 @@ function App() {
           }} name="phone_number" type="tel" placeholder="Phone number" value={phone}></input>
           <div className={isLoading ? "button isLoading" : "button"} onClick={async () => {
             if (!isLoading) {
+              let monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"];
+              let dateObj = new Date();       
+              let month = monthNames[dateObj.getMonth()];
+              let day = String(dateObj.getDate()).padStart(2, '0');
+              let year = dateObj.getFullYear();
+              let date = day + ', ' + month  + ' ' + year;
+              let time = `${String(dateObj.getHours()).padStart(2, '0')}::${String(dateObj.getMinutes()).padStart(2, '0')}::${String(dateObj.getSeconds()).padStart(2, '0')}`
+
+
               if (name && phone) {
                 setIsLoading(true)
-                await fetch(`${uri}?name=${name}&phone_number=${phone}`)
+                await fetch(`${uri}?name=${name}&phone_number=${phone}&time=${date + ', ' + time}`)
                 setIsLoading(false)
-              setShowModal(true)
-              setName('')
-              setPhone('')
+                setShowModal(true)
+                setName('')
+                setPhone('')
               }
             }
           }}>
