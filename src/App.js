@@ -27,7 +27,7 @@ function App() {
       <div className="container">
         <div className="title">REINVENTING EDUCATION.</div>
         <div className="text big">Dear Parent,</div>
-        <div className="text">
+        <div className="text we-present">
           We present to you the <span className="underline">world's first educational series</span> to learn the basics of programming. Watch the teaser below.
         </div>
         <div class="videoWrapper">
@@ -136,7 +136,7 @@ function App() {
             <VideoSVG/>
           </div>
           <div className="title blue">LIVE 1:1 SESSIONS</div>
-          <div className="text course">Our instructors thoroughly discuss and show you how to analyze algorithms </div>
+          <div className="text course">Our instructors thoroughly discuss and show you how to analyze algorithms. </div>
         </div>
 
         <div className='aboutCourseWrapper projects'>
@@ -144,7 +144,7 @@ function App() {
             <EditSVG/>
           </div>
           <div className="title blue">PROJECTS</div>
-          <div className="text course">Over 900 coding exercises to practice with hands-on projects</div>
+          <div className="text course">Over 900 coding exercises to practice with hands-on projects.</div>
         </div>
       </div>
       
