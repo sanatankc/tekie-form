@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 60 60.444">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="60" height="60.444" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.217" y1="0.215" x2="0.844" y2="0.861" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#34e4ea"/>
+      <stop offset="1" stop-color="#00ade6"/>
+    </linearGradient>
+    <filter id="ic_play_arrow_24px" x="13" y="6.003" width="39.784" height="54.441" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_7" data-name="Group 7" clip-path="url(#clip-path)">
+    <g id="Group_7-2" data-name="Group 7" transform="translate(-352.21 -1433.647)">
+      <g id="Ellipse_33" data-name="Ellipse 33" transform="translate(352.21 1433.647)" fill="none" stroke="#2ad9e9" stroke-width="3">
+        <circle cx="30" cy="30" r="30" stroke="none"/>
+        <circle cx="30" cy="30" r="28.5" fill="none"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 352.21, 1433.65)" filter="url(#ic_play_arrow_24px)">
+        <path id="ic_play_arrow_24px-2" data-name="ic_play_arrow_24px" d="M8,5V41.441l21.784-18.22Z" transform="translate(14 7)" fill="url(#linear-gradient)"/>
+      </g>
+    </g>
+  </g>
+</svg>
