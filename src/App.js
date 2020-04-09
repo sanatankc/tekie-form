@@ -5,6 +5,9 @@ import tekieLogo from './tekieLogo.png'
 import flex from './flex.png'
 import info from './info.png'
 import './App.css';
+import { ReactComponent as PlaySVG } from './play.svg'
+import { ReactComponent as EditSVG } from './edit.svg'
+import { ReactComponent as VideoSVG } from './video.svg'
 
 
 const uri = 'https://script.google.com/macros/s/AKfycbyvC6_554Eh5Bs709VCOipMUnhIUZ5bd0sfMVRCBg/exec'
@@ -31,8 +34,21 @@ function App() {
           <iframe allowfullscreen="true" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="788.54" height="443" type="text/html" src="https://www.youtube.com/embed/Eni0tJ1AAe8?autoplay=1&fs=1&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0"></iframe>
         </div>
         </div>
-        <div></div>
-        <img src={flex} className="flex" />
+        <div className="team-container">
+          <div className="text small">Brought to you by team from</div>
+          <div className="flex-container">
+            <div className="flex-grid-wrapper">
+              <div className="flex-items google">
+              </div>
+              <div className="flex-items intel"></div>
+              <div className="flex-items microsoft"></div>
+              <div className="flex-items amazon"></div>
+              <div className="flex-items iitDelhi">IIT Delhi</div>
+              <div className="flex-items iitAhemdabad">IIM Ahemdabad</div>
+              <div className="flex-items iitNit">NITs</div>
+            </div>
+          </div>
+        </div>
         <div className="container">
         <div className="subTitle">
           ABOUT TEKIE
@@ -105,9 +121,34 @@ function App() {
       <div className="subTitle">
         ABOUT THIS COURSE
       </div>
-      <div className="container">
-        <img src={info} className="info" alt="info" />
+      
+      <div className="aboutCourseContainer">
+        <div className='aboutCourseWrapper'>
+          <div className="iconContainer">
+            <PlaySVG/>
+          </div>
+          <div className="title blue">45 LESSONS</div>
+          <div className="text course">Videos and lesson workbooks made by the best teachers, period.</div>
+        </div>
+
+        <div className='aboutCourseWrapper'>
+          <div className="iconContainer">
+            <VideoSVG/>
+          </div>
+          <div className="title blue">LIVE 1:1 SESSIONS</div>
+          <div className="text course">Our instructors thoroughly discuss and show you how to analyze algorithms </div>
+        </div>
+
+        <div className='aboutCourseWrapper projects'>
+          <div className="iconContainer">
+            <EditSVG/>
+          </div>
+          <div className="title blue">PROJECTS</div>
+          <div className="text course">Over 900 coding exercises to practice with hands-on projects</div>
+        </div>
       </div>
+      
+
 
       <div className="container">
         <div className="subTitle">
