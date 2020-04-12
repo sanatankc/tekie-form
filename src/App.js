@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Modal from 'react-bootstrap-modal'
 import logo from './logo.svg';
 import tekieLogo from './tekieLogo.png'
@@ -16,6 +16,14 @@ function App() {
   const [phone, setPhone] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [showModal, setShowModal] = useState(false)
+  let referred_from = useRef()
+  useEffect(() => {
+    const queryString = window.location.search
+    const URLParams = new URLSearchParams(queryString)
+    referred_from.current = URLParams.get('refer')
+
+  }, [])
+
   const handleSubmit = () => {
 
   }
@@ -95,9 +103,15 @@ function App() {
               let minute = String(dateObj.getMinutes()).padStart(2, '0')
               let time = `${hours}:${minute} ${clock}`
 
+              let url = `${uri}?name=${name}&phone_number=${phone}&time=${date + ' ' + time}`
+              if (referred_from.current) {
+                url = `${url}&referred_from=${referred_from.current}`
+              }
+              console.log(url)
               if (name && phone) {
                 setIsLoading(true)
-                await fetch(`${uri}?name=${name}&phone_number=${phone}&time=${date + ' ' + time}`)
+                console.log()
+                await fetch(url)
                 setIsLoading(false)
                 setShowModal(true)
                 setName('')
