@@ -43,7 +43,7 @@ function App() {
         </div>
         </div>
         <div className="team-container">
-          <div className="text small">Brought to you by team from</div>
+          <div className="text small">Brought to you by a team from</div>
           <div className="flex-container">
             <div className="flex-grid-wrapper">
               <div className="flex-items google">
