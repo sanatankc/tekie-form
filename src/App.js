@@ -16,9 +16,14 @@ function App() {
   const [phone, setPhone] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [showModal, setShowModal] = useState(false)
+  const [fromSMS, setfromSMS] = useState(false)
+
   let referred_from = useRef()
   useEffect(() => {
     const queryString = window.location.search
+    if (queryString === '?r=s') {
+      setfromSMS(true)
+    }
     const URLParams = new URLSearchParams(queryString)
     referred_from.current = URLParams.get('refer')
 
@@ -103,7 +108,7 @@ function App() {
               let minute = String(dateObj.getMinutes()).padStart(2, '0')
               let time = `${hours}:${minute} ${clock}`
 
-              let url = `${uri}?name=${name}&phone_number=${phone}&time=${date + ' ' + time}`
+              let url = `${uri}?name=${name}&phone_number=${phone}&time=${date + ' ' + time}&from_sms=${fromSMS}`
               if (referred_from.current) {
                 url = `${url}&referred_from=${referred_from.current}`
               }
