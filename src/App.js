@@ -22,10 +22,11 @@ function App() {
   let referred_from = useRef()
   useEffect(() => {
     const queryString = window.location.search
-    if (queryString === '?r=s') {
+    console.log(queryString.includes('?fbclid='))
+    if (queryString.includes('?r=s')) {
       setfromSMS(true)
     }
-    if (queryString === '?r=fb') {
+    if (queryString.includes('?fbclid=')) {
       setfromFB(true)
     }
     const URLParams = new URLSearchParams(queryString)
@@ -36,6 +37,7 @@ function App() {
   const handleSubmit = () => {
 
   }
+  
   return (
     <div className="App">
       <div className="logo-container">
