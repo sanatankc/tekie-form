@@ -34,14 +34,20 @@ function App() {
 
   }, [])
 
-  const handleSubmit = () => {
-
-  }
-  
   return (
     <div className="App">
       <div className="logo-container">
         <img src={tekieLogo} className="tekieLogo" />
+        <div className="button--enroll" onClick={() => {
+          const freeSession = document.querySelector('#free-session')
+          window.scroll({
+            top: freeSession.getBoundingClientRect().y - 38, 
+            left: 0, 
+            behavior: 'smooth'
+          });
+        }}>
+          Enroll now
+        </div>
       </div>
       <div className="container">
         <div className="title">REINVENTING EDUCATION.</div>
@@ -78,7 +84,7 @@ function App() {
         <div className="text noMargin">
           We are on a mission to train innovators and entrepreneurs of next-generation on the right skills they need for the future.
         </div>
-        <div className="subTitle">
+        <div className="subTitle" id="free-session">
           CLAIM YOUR FIRST FREE SESSION!
         </div>
         <div className="text">

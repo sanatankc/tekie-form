@@ -87,7 +87,7 @@
 
 .logo-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 100vw;
   margin-bottom: 24px;
@@ -455,10 +455,29 @@ a {
     width: 8vw;
   }
   .logo-container {
-    justify-content: flex-start;
+    justify-content: space-between;
     padding-left: 30px;
     box-sizing: border-box;
     padding: 6px 30px;
     border-bottom: 1px solid white;
   }
+}
+
+.button--enroll {
+  width: 147PX;
+  height: 39px;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* margin-bottom: 20px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1.4px;
+  border: 0.1px solid white;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  position: relative;
 }
