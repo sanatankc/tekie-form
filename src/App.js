@@ -26,7 +26,7 @@ function App() {
     if (queryString.includes('?r=s')) {
       setfromSMS(true)
     }
-    if (queryString.includes('?fbclid=')) {
+    if (queryString.includes('?fbclid=') || queryString.includes('?r=fb')) {
       setfromFB(true)
     }
     const URLParams = new URLSearchParams(queryString)
